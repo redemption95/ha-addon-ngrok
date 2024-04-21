@@ -53,6 +53,10 @@ for id in $(bashio::config "tunnels|keys"); do
   if [[ $bind_tls != "null" ]]; then
     echo "    bind_tls: $bind_tls" >> $configPath
   fi
+  domain=$(bashio::config "tunnels[${id}].domain")
+  if [[ $domain != "null" ]]; then
+    echo "    domain: $domain" >> $configPath
+  fi
   subdomain=$(bashio::config "tunnels[${id}].subdomain")
   if [[ $subdomain != "null" ]]; then
     echo "    subdomain: $subdomain" >> $configPath
