@@ -57,10 +57,10 @@ for id in $(bashio::config "tunnels|keys"); do
   if [[ $domain != "null" ]]; then
     echo "    domain: $domain" >> $configPath
   fi
-  subdomain=$(bashio::config "tunnels[${id}].subdomain")
-  if [[ $subdomain != "null" ]]; then
-    echo "    subdomain: $subdomain" >> $configPath
-  fi
+  # subdomain=$(bashio::config "tunnels[${id}].subdomain")
+  # if [[ $subdomain != "null" ]]; then
+  #   echo "    subdomain: $subdomain" >> $configPath
+  # fi
   hostname=$(bashio::config "tunnels[${id}].hostname")
   if [[ $hostname != "null" ]]; then
     echo "    hostname: $hostname" >> $configPath
